@@ -58,6 +58,6 @@ class InteractiveRecord
       sql = "SELECT * FROM #{self.table_name} WHERE #{k.to_s} = '#{v}'"
       thing << DB[:conn].execute(sql)
     end
-    thing
+    thing.flatten
   end
 end
